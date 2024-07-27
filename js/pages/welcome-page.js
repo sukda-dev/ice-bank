@@ -19,7 +19,13 @@ function animation_handle() {
   }, 2000);
 }
 
-function game_handle() {}
+function game_handle() {
+  initSound();
+
+  $("body").click(function () {
+    normalSound();
+  });
+}
 
 function scrollSlidePage(pageId) {
   let clientY;

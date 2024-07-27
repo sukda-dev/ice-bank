@@ -21,8 +21,6 @@ package-lock.json
 # sound
 video
 videos
-sound
-sounds
 
 # Log files
 *.log
