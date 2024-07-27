@@ -1,0 +1,188 @@
+[
+  {
+    "key": "text-enter",
+    "data": {
+      "value": "ENTER",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-menu",
+    "data": {
+      "value": "MENU",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-replay",
+    "data": {
+      "value": "REPLAY",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-save-score",
+    "data": {
+      "value": "SAVE YOUR SCORE",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-download-memo",
+    "data": {
+      "value": "DOWNLOAD YOUR MEMO",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-well-done",
+    "data": {
+      "value": "WELL DONE!",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-not-exactly",
+    "data": {
+      "value": "NOT EXACTLY…",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-match",
+    "data": {
+      "value": "MATCH",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-skip",
+    "data": {
+      "value": "skip",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-welcome",
+    "data": {
+      "value": "welcome",
+      "validated": false,
+      "comment": ""
+    }
+  },
+
+  {
+    "key": "text-menu1",
+    "data": {
+      "value": "REPLICA FANTASIES<br>COLLECTION",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-menu2",
+    "data": {
+      "value": "REPLICA FANTASIES<br>FRAGRANCES",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-sub1-menu2",
+    "data": {
+      "value": "SOUL OF THE FOREST",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-sub2-menu2",
+    "data": {
+      "value": "DANCING ON THE MOON",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-sub3-menu2",
+    "data": {
+      "value": "FLYING",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-menu3",
+    "data": {
+      "value": "TEST YOUR<br>KNOWLEDGE",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-menu3-no-br",
+    "data": {
+      "value": "TEST YOUR KNOWLEDGE",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-subpart1-menu2",
+    "data": {
+      "value": "DIVE INTO THE FANTASY",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-subpart2-menu2",
+    "data": {
+      "value": "OLFACTION",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-subpart3-menu2",
+    "data": {
+      "value": "SURREAL NOTE",
+      "validated": false,
+      "comment": ""
+    }
+  },
+
+  {
+    "key": "text-subpart4-menu2",
+    "data": {
+      "value": "THE MOON DUST<br>& ITS INGREDIENTS",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-subpart5-menu2",
+    "data": {
+      "value": "THE MYSTICAL WOOD<br>& ITS INGREDIENTS",
+      "validated": false,
+      "comment": ""
+    }
+  },
+  {
+    "key": "text-subpart6-menu2",
+    "data": {
+      "value": "THE OZONIC CLOUD<br>& ITS INGREDIENTS",
+      "validated": false,
+      "comment": ""
+    }
+  }
+]

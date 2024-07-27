@@ -1,0 +1,48 @@
+.video-overlay {
+  @include fill-area;
+}
+
+.video {
+  @include fill-area;
+  @include flex-center-column;
+
+  &__close {
+    width: rem(60);
+    height: rem(60);
+    position: absolute;
+    top: rem(60);
+    right: rem(60);
+    z-index: 3;
+
+    @include for-mobile {
+      width: rem(50);
+      height: rem(50);
+      // top: rem(60);
+      // right: rem(60);
+      top: rem(20);
+      right: rem(100);
+      @include bg-cov("../images/general/close-m.png");
+    }
+  }
+
+  &__skip {
+    display: none;
+    width: fit-content;
+    color: $white;
+    position: absolute;
+    bottom: rem(42);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    background-color: $black;
+  }
+}

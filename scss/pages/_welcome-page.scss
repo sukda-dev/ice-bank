@@ -1,0 +1,196 @@
+#welcome-page {
+  @include fill-area;
+
+  .content-inner,
+  .card,
+  .card-backgroung {
+    @include fill-area;
+    overflow: hidden;
+  }
+
+  .card {
+    position: relative;
+
+    .card-vactor {
+      opacity: 0;
+      position: absolute;
+      z-index: 3;
+      animation: rotate-vactor 2s ease-in-out infinite;
+      animation-delay: 2s;
+      &__1 {
+        width: rem(80);
+        height: rem(81);
+        top: rem(1378);
+        right: rem(199);
+        @include bg-cov("../images/pages/welcome-page/vactor1.png");
+      }
+      &__2 {
+        width: rem(83);
+        height: rem(106);
+        top: rem(1124);
+        right: rem(188);
+        @include bg-cov("../images/pages/welcome-page/vactor2.png");
+      }
+      &__3 {
+        width: rem(79);
+        height: rem(85);
+        top: rem(791);
+        right: rem(173);
+        @include bg-cov("../images/pages/welcome-page/vactor3.png");
+      }
+      &__4 {
+        width: rem(102);
+        height: rem(84);
+        top: rem(626);
+        right: rem(201);
+        @include bg-cov("../images/pages/welcome-page/vactor4.png");
+      }
+      &__5 {
+        width: rem(80);
+        height: rem(84);
+        top: rem(521);
+        left: calc(50% - rem(40));
+        @include bg-cov("../images/pages/welcome-page/vactor5.png");
+      }
+      &__6 {
+        width: rem(74);
+        height: rem(85);
+        top: rem(667);
+        left: rem(197);
+        @include bg-cov("../images/pages/welcome-page/vactor6.png");
+      }
+      &__7 {
+        width: rem(72);
+        height: rem(106);
+        top: rem(938);
+        left: rem(161);
+        @include bg-cov("../images/pages/welcome-page/vactor7.png");
+      }
+      &__8 {
+        width: rem(77);
+        height: rem(84);
+        top: rem(1164);
+        left: rem(168);
+        @include bg-cov("../images/pages/welcome-page/vactor8.png");
+      }
+      &__9 {
+        width: rem(73);
+        height: rem(102);
+        top: rem(1367);
+        left: rem(206);
+        @include bg-cov("../images/pages/welcome-page/vactor9.png");
+      }
+    }
+
+    .card {
+      &__texts {
+        position: relative;
+        z-index: 3;
+        margin: rem(58) auto 0;
+        .text-desc {
+          opacity: 0;
+          font-family: $font-pt-sans;
+          font-size: rem(24);
+          line-height: rem(31);
+          color: #b3917b;
+        }
+        .text-name {
+          opacity: 0;
+          font-family: $font-good-vibrations;
+          font-size: rem(96);
+          line-height: rem(134);
+          color: #b3917b;
+          margin: rem(21) auto;
+        }
+
+        .group-date {
+          opacity: 0;
+          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: rem(55);
+          margin: rem(33) auto 0;
+
+          .text-date {
+            font-family: $font-angsana;
+            font-size: rem(48);
+            color: #b3917b;
+
+            &--bold {
+              font-family: $font-amethysta;
+              font-size: rem(96);
+              color: #b3917b;
+            }
+          }
+        }
+      }
+
+      &__backdrop {
+        position: absolute;
+        width: rem(879);
+        height: rem(1688);
+        @include bg-cov("../images/general/backdrop.png");
+        z-index: 2;
+        left: calc(50% - rem(439.5));
+        animation: scroll-backdrop 2s ease-in-out forwards;
+      }
+
+      &__main {
+        opacity: 0;
+        position: absolute;
+        width: rem(616);
+        height: rem(960);
+        @include bg-cov("../images/pages/welcome-page/main.png");
+        z-index: 3;
+        top: rem(528);
+        left: calc(50% - rem(308));
+        animation: fade-in 1s ease-in-out forwards;
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scroll-backdrop {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0;
+    }
+  }
+  @keyframes rotate-vactor {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    12.5% {
+      transform: rotate(-15deg);
+    }
+    37.5% {
+      transform: rotate(15deg);
+    }
+    62.5% {
+      transform: rotate(-15deg);
+    }
+    87.5% {
+      transform: rotate(15deg);
+    }
+  }
+  @keyframes scroll-background {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
