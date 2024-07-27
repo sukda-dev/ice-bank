@@ -1,0 +1,97 @@
+$nav-desktop: rem(125);
+$nav-mobile: rem(210);
+
+#header,
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $nav-desktop;
+  z-index: $nav-index;
+  background: transparent;
+  display: none;
+
+  @include for-mobile {
+    height: $nav-mobile;
+  }
+
+  &__wrap {
+    position: relative;
+    @include fill-area;
+    @include flex-between;
+  }
+
+  &__ham,
+  &__exit {
+    box-sizing: content-box;
+    cursor: pointer;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__ham {
+    width: rem(60);
+    height: rem(23);
+
+    @include for-mobile {
+      width: rem(60);
+      height: rem(23);
+    }
+  }
+
+  &__title {
+    color: $white;
+    text-align: center;
+    font-weight: $medium;
+    font-size: rem(40);
+    letter-spacing: rem(12);
+
+    @include for-desktop {
+      @include absolute-center;
+    }
+  }
+
+  &__exit {
+    width: rem(48);
+    height: rem(51);
+    margin-right: rem(76);
+
+    @include for-mobile {
+      width: rem(48);
+      height: rem(51);
+      margin-right: rem(42);
+    }
+  }
+
+  &__page {
+    color: $white;
+    text-align: center;
+    font-size: rem(40);
+    font-style: normal;
+    font-weight: $medium;
+    line-height: normal;
+    letter-spacing: rem(12);
+
+    &.page-sub-name {
+      font-size: rem(35);
+      letter-spacing: rem(10.5);
+    }
+  }
+
+  .page-name {
+    &--0 {
+      font-size: rem(30);
+      font-weight: $book;
+      letter-spacing: rem(9);
+      text-transform: uppercase;
+
+      @include for-mobile {
+        font-size: rem(48);
+        letter-spacing: rem(14.4);
+      }
+    }
+  }
+}
