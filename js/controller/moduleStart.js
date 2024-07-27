@@ -43,6 +43,20 @@ var moduleStart = {
         }
       }
     );
+
+    gsap.fromTo(
+      $(".card-backgroung__sky"),
+      {
+        x: 0,
+      },
+      {
+        x: "-50%",
+        ease: "none",
+        repeat: -1,
+        duration: 10,
+        delay: 0,
+      }
+    );
   },
 
   // INIT THE MENU FUNCTION

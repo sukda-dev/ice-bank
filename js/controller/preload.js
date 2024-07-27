@@ -25,6 +25,15 @@ function preloadImages(expression) {
       );
       break;
 
+    // content1-page
+    case "content1-page":
+      $.preloadImages(
+        "images/pages/content1-page/icon1.png",
+        "images/pages/content1-page/icon2.png",
+        "images/pages/content1-page/icon3.png"
+      );
+      break;
+
     // welcome-page
     case "welcome-page":
       $.preloadImages(

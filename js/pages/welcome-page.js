@@ -20,9 +20,8 @@ function animation_handle() {
 }
 
 function game_handle() {
-  initSound();
-
   $("body").click(function () {
+    initSound();
     normalSound();
   });
 }

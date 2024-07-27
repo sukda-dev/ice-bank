@@ -52,7 +52,48 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: url("fonts/ACaslonPro-Regular.eot");
+  src: url("fonts/ACaslonPro-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/ACaslonPro-Regular.woff2") format("woff2"),
+    url("fonts/ACaslonPro-Regular.woff") format("woff"),
+    url("fonts/ACaslonPro-Regular.ttf") format("truetype"),
+    url("fonts/ACaslonPro-Regular.svg#ACaslonPro-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Thai";
+  src: url("fonts/NotoSansThai-SemiBold.eot");
+  src: url("fonts/NotoSansThai-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/NotoSansThai-SemiBold.woff2") format("woff2"),
+    url("fonts/NotoSansThai-SemiBold.woff") format("woff"),
+    url("fonts/NotoSansThai-SemiBold.ttf") format("truetype"),
+    url("fonts/NotoSansThai-SemiBold.svg#NotoSansThai-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Thai";
+  src: url("fonts/NotoSansThai-Regular.eot");
+  src: url("fonts/NotoSansThai-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/NotoSansThai-Regular.woff2") format("woff2"),
+    url("fonts/NotoSansThai-Regular.woff") format("woff"),
+    url("fonts/NotoSansThai-Regular.ttf") format("truetype"),
+    url("fonts/NotoSansThai-Regular.svg#NotoSansThai-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 $font-amethysta: "Amethysta-Regular", sans-serif;
 $font-good-vibrations: "Good Vibrations ROB Script", sans-serif;
 $font-pt-sans: "PT Sans Caption", sans-serif;
 $font-angsana: "AngsanaUPC", sans-serif;
+$font-adobe: "Adobe Caslon Pro", sans-serif;
+$font-noto: "Adobe Caslon Pro", sans-serif;
