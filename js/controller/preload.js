@@ -34,6 +34,11 @@ function preloadImages(expression) {
       );
       break;
 
+    // content2-page
+    case "content2-page":
+      $.preloadImages("images/pages/content2-page/pin.png");
+      break;
+
     // welcome-page
     case "welcome-page":
       $.preloadImages(

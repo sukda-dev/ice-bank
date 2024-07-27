@@ -1,1 +1,127 @@
-#content2-page {}
+#content2-page {
+  .card {
+    position: relative;
+    width: rem(960);
+    height: rem(1688);
+    margin: 0 auto;
+    padding: rem(69) rem(45) 0;
+    @include bg-cov("../images/general/backdrop-back.png");
+  }
+
+  .map {
+    &__pin {
+      opacity: 0;
+      width: rem(68);
+      height: rem(68);
+      margin: 0 auto;
+      @include bg-cov("../images/pages/content2-page/pin.png");
+    }
+    &__title {
+      opacity: 0;
+      font-family: $font-noto;
+      font-weight: 700;
+      margin: rem(30) auto 0;
+    }
+    &__subtitle {
+      opacity: 0;
+      font-family: $font-noto;
+      font-size: rem(24);
+    }
+    &__google-map {
+      opacity: 0;
+      width: rem(732);
+      height: rem(578);
+      border: 0;
+      margin: rem(60) auto 0;
+    }
+  }
+
+  .theme {
+    margin: rem(102) auto 0;
+    &__subtitle {
+      opacity: 0;
+      font-family: $font-noto;
+      font-size: rem(36);
+      font-weight: 400;
+    }
+    &__title {
+      opacity: 0;
+      position: relative;
+      width: fit-content;
+      text-transform: uppercase;
+      margin: 0 auto;
+      font-size: rem(48);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: rem(180);
+        height: 1px;
+        top: calc(50% - 0.75px);
+        background-color: #b3917b;
+      }
+
+      &::before {
+        left: rem(-213);
+      }
+      &::after {
+        right: rem(-213);
+      }
+    }
+
+    .theme-colors {
+      opacity: 0;
+      width: rem(740);
+      margin: rem(46) auto 0;
+      justify-content: space-between;
+      @include flex;
+
+      .theme-color {
+        width: rem(120);
+        color: #000000;
+
+        &__color {
+          width: rem(120);
+          height: rem(150);
+        }
+
+        &__title {
+          font-size: rem(20);
+          text-transform: uppercase;
+          margin: rem(15) auto 0;
+        }
+        &__code {
+          font-size: rem(20);
+          margin: rem(10) auto 0;
+        }
+
+        &:nth-child(1) {
+          .theme-color__color {
+            background-color: #93c6e7;
+          }
+        }
+        &:nth-child(2) {
+          .theme-color__color {
+            background-color: #ffc5c5;
+          }
+        }
+        &:nth-child(3) {
+          .theme-color__color {
+            background-color: #fbf3d5;
+          }
+        }
+        &:nth-child(4) {
+          .theme-color__color {
+            background-color: #776b5d;
+          }
+        }
+        &:nth-child(5) {
+          .theme-color__color {
+            background-color: #b4b4b8;
+          }
+        }
+      }
+    }
+  }
+}
