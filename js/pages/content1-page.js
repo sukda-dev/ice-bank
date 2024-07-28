@@ -17,6 +17,16 @@ function animationHandle() {
 }
 
 function gameHandle() {
+  let elemArray = [
+    $(".invite__title"),
+    $(".invite__subtitle"),
+    $(".invite__image"),
+    $(".countdown__title"),
+    $(".countdown__subtitle"),
+    $(".countdown__desc"),
+    $(".countdown-times"),
+  ];
+
   gsap.fromTo(
     $(".card"),
     {
@@ -26,22 +36,11 @@ function gameHandle() {
       top: 0,
       duration: 2,
       ease: Power1.linear,
+      onComplete: function () {
+        eachFadeInByOpacity(elemArray, function () {});
+      },
     }
   );
-
-  let elemArray = [
-    $(".countdown__title"),
-    $(".countdown__subtitle"),
-    $(".countdown__desc"),
-    $(".countdown-times"),
-    $(".schedule__subtitle"),
-    $(".schedule__title"),
-    $(".group-detail"),
-  ];
-
-  setTimeout(() => {
-    eachFadeInByOpacity(elemArray, function () {});
-  }, 2000);
 }
 
 function updateCountdown() {

@@ -27,16 +27,39 @@ function preloadImages(expression) {
 
     // content1-page
     case "content1-page":
-      $.preloadImages(
-        "images/pages/content1-page/icon1.png",
-        "images/pages/content1-page/icon2.png",
-        "images/pages/content1-page/icon3.png"
-      );
+      $.preloadImages("images/pages/content1-page/image.jpg");
       break;
 
     // content2-page
     case "content2-page":
-      $.preloadImages("images/pages/content2-page/pin.png");
+      $.preloadImages(
+        "images/pages/content2-page/icon1.png",
+        "images/pages/content2-page/icon2.png",
+        "images/pages/content2-page/icon3.png",
+        "images/pages/content2-page/pin.png"
+      );
+      break;
+
+    // content3-page
+    case "content3-page":
+      $.preloadImages(
+        "images/pages/content3-page/image1.jpg",
+        "images/pages/content3-page/image10.jpg",
+        "images/pages/content3-page/image11.jpg",
+        "images/pages/content3-page/image12.jpg",
+        "images/pages/content3-page/image13.jpg",
+        "images/pages/content3-page/image14.jpg",
+        "images/pages/content3-page/image15.jpg",
+        "images/pages/content3-page/image16.jpg",
+        "images/pages/content3-page/image2.jpg",
+        "images/pages/content3-page/image3.jpg",
+        "images/pages/content3-page/image4.jpg",
+        "images/pages/content3-page/image5.jpg",
+        "images/pages/content3-page/image6.jpg",
+        "images/pages/content3-page/image7.jpg",
+        "images/pages/content3-page/image8.jpg",
+        "images/pages/content3-page/image9.jpg"
+      );
       break;
 
     // welcome-page

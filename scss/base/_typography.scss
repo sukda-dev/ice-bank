@@ -104,9 +104,23 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Quentin";
+  src: url("fonts/Quentin.eot");
+  src: url("fonts/Quentin.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Quentin.woff2") format("woff2"),
+    url("fonts/Quentin.woff") format("woff"),
+    url("fonts/Quentin.ttf") format("truetype"),
+    url("fonts/Quentin.svg#Quentin") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 $font-amethysta: "Amethysta-Regular", sans-serif;
 $font-good-vibrations: "Good Vibrations ROB Script", sans-serif;
 $font-pt-sans: "PT Sans Caption", sans-serif;
 $font-angsana: "AngsanaUPC", sans-serif;
 $font-adobe: "Adobe Caslon Pro", sans-serif;
-$font-noto: "Adobe Caslon Pro", sans-serif;
+$font-noto: "Noto Sans Thai", sans-serif;
+$font-quentin: "Quentin", sans-serif;

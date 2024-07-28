@@ -12,6 +12,16 @@ $(function () {
 });
 
 function animationHandle() {
+  let elemArray = [
+    $(".schedule__subtitle"),
+    $(".schedule__title"),
+    $(".group-detail"),
+    $(".map__pin"),
+    $(".map__title"),
+    $(".map__subtitle"),
+    $(".map__google-map"),
+  ];
+
   gsap.fromTo(
     $(".card"),
     {
@@ -21,22 +31,11 @@ function animationHandle() {
       top: 0,
       duration: 2,
       ease: Power1.linear,
+      onComplete: function () {
+        eachFadeInByOpacity(elemArray, function () {});
+      },
     }
   );
-
-  let elemArray = [
-    $(".map__pin"),
-    $(".map__title"),
-    $(".map__subtitle"),
-    $(".map__google-map"),
-    $(".theme__subtitle"),
-    $(".theme__title"),
-    $(".theme-colors"),
-  ];
-
-  setTimeout(() => {
-    eachFadeInByOpacity(elemArray, function () {});
-  }, 2000);
 }
 
 function gameHandle() {}
