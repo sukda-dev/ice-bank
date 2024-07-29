@@ -2,7 +2,6 @@ var pageId = "#welcome-page";
 direction = "";
 
 $(function () {
-  animation_handle();
   game_handle();
 });
 
@@ -14,7 +13,9 @@ function animation_handle() {
     $(".text-desc").eq(2),
     $(".text-desc").eq(3),
     $(".group-date"),
+    $(".card__main"),
     $(".card-vactor"),
+    $(".pagination"),
   ];
 
   gsap.fromTo(
@@ -35,11 +36,32 @@ function animation_handle() {
 }
 
 function game_handle() {
-  $("body").click(function () {
-    initSound();
-    normalSound();
-  });
+  if (!activeModule) {
+    $(".envlope-wrapper").fadeInByFlex();
+    $(".envlope-wrapper").on("click", function () {
+      $(this).offClick();
+      initSound();
+      normalSound();
+      open();
+      activeModule = true;
 
+      timeouts.push(
+        setTimeout(() => {
+          $(this).fadeOut(function () {
+            animation_handle();
+            pageControl();
+          });
+        }, 1500)
+      );
+    });
+  } else {
+    $(".envlope-wrapper").hide();
+    animation_handle();
+    pageControl();
+  }
+}
+
+function pageControl() {
   scrollSlidePage();
 
   // btn arrow up
@@ -56,6 +78,10 @@ function game_handle() {
 
     animationNext();
   });
+}
+
+function open() {
+  $("#envelope").addClass("open").removeClass("close");
 }
 
 // scroll slide page
