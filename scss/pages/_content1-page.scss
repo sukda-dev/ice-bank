@@ -5,6 +5,7 @@
     height: rem(1688);
     margin: 0 auto;
     padding: rem(95) rem(45) 0;
+    z-index: 2;
     @include bg-cov("../images/general/backdrop-back.png");
   }
 

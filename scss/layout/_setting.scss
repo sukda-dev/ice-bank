@@ -45,12 +45,7 @@ img {
 }
 
 #main-container {
-  // @include flex-column;
   @include fill-area;
-  background-color: #eeeeee;
-  // justify-content: space-between;
-  // overflow: hidden;
-  // position: relative;
 }
 
 .m-style {

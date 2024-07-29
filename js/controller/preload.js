@@ -3,25 +3,14 @@ function preloadImages(expression) {
     // general
     case "general":
       $.preloadImages(
-        "images/general/arrow-down-m.png",
-        "images/general/arrow-select.png",
-        "images/general/arrow-up-m-lock.png",
-        "images/general/arrow-up-m.png",
+        "images/general/arrow-down.png",
+        "images/general/arrow-up.png",
         "images/general/backdrop-back.png",
         "images/general/backdrop.png",
         "images/general/bg.png",
-        "images/general/close-m.png",
-        "images/general/close-pdf.png",
-        "images/general/close.svg",
-        "images/general/menu-bg-m.jpg",
-        "images/general/menu-icon-m.png",
-        "images/general/menu-m.png",
         "images/general/mountain.png",
-        "images/general/shutdown-m.png",
         "images/general/swiper-arrow-next.png",
-        "images/general/swiper-arrow-prev.png",
-        "images/general/swiper-button-next-m.png",
-        "images/general/swiper-button-prev-m.png"
+        "images/general/swiper-arrow-prev.png"
       );
       break;
 

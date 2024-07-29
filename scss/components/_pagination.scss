@@ -1,11 +1,12 @@
 .pagination {
   position: absolute;
-  bottom: rem(43);
+  bottom: rem(100);
   right: rem(40);
-
+  z-index: 2;
   .arrow {
     @include flex-center-column;
     gap: rem(32);
+    z-index: 4;
 
     &__up {
       display: inline-block;
@@ -13,11 +14,11 @@
 
       width: rem(43);
       height: rem(35);
-      @include bg-cov("../images/general/arrow-up-m.png");
+      @include bg-cov("../images/general/arrow-up.png");
 
       &.lock {
         pointer-events: none;
-        @include bg-cov("../images/general/arrow-up-m-lock.png");
+        opacity: 0.5;
       }
     }
 
@@ -27,11 +28,11 @@
 
       width: rem(43);
       height: rem(35);
-      @include bg-cov("../images/general/arrow-down-m.png");
+      @include bg-cov("../images/general/arrow-down.png");
 
       &.lock {
         pointer-events: none;
-        opacity: 0.4;
+        opacity: 0.5;
       }
     }
   }

@@ -1,3 +1,6 @@
+var pageId = "#welcome-page";
+direction = "";
+
 $(function () {
   animation_handle();
   game_handle();
@@ -14,9 +17,20 @@ function animation_handle() {
     $(".card-vactor"),
   ];
 
-  setTimeout(() => {
-    eachFadeInByOpacity(elemArray, function () {});
-  }, 2000);
+  gsap.fromTo(
+    $(`${pageId} .card`),
+    {
+      top: "-160rem",
+    },
+    {
+      top: 0,
+      duration: 2,
+      ease: Power1.linear,
+      onComplete: function () {
+        eachFadeInByOpacity(elemArray, function () {});
+      },
+    }
+  );
 }
 
 function game_handle() {
@@ -24,120 +38,79 @@ function game_handle() {
     initSound();
     normalSound();
   });
+
+  scrollSlidePage();
+
+  // btn arrow up
+  $(`${pageId} .pagination .arrow__up`).on("click", function () {
+    console.log("arrow up");
+
+    animationPrev();
+  });
+
+  // btn arrow down
+  $(`${pageId} .pagination .arrow__down`).on("click", function () {
+    console.log("arrow down");
+    $(this).clearAnim();
+
+    animationNext();
+  });
 }
 
-function scrollSlidePage(pageId) {
+// scroll slide page
+function scrollSlidePage() {
   let clientY;
 
-  // For Mobile
-  $(pageId).on("touchstart", function (e) {
+  // Touchstart
+  $(`${pageId}`).on("touchstart", function (e) {
     clientY = e.touches[0].clientY;
   });
 
-  $(pageId).on("touchend", function (e) {
+  // Touchend
+  $(`${pageId}`).on("touchend", function (e) {
     let deltaY;
     deltaY = e.changedTouches[0].clientY - clientY;
     clientY = 0;
-
     if (deltaY >= 110) {
-      console.log("prev");
-
-      if (step == 1) {
-        goto($store[pageId].prevPage, "prev");
-      }
-
-      if (step > 1) {
-        step--;
-      }
-
-      changeStep();
+      animationPrev();
     } else if (deltaY < -100) {
-      console.log("next");
-      if (step < 3) {
-        step++;
-      }
-
-      if (step == 3) {
-        goto($store[pageId].nextPage, "next");
-      }
-
-      changeStep();
+      animationNext();
     }
   });
 
-  // For Desktop
-  $(pageId).on("wheel", function (e) {
+  // Scroll on Desktop
+  $(`${pageId}`).on("wheel", function (e) {
     if (e.originalEvent.deltaY !== 0) {
       if (e.originalEvent.deltaY < 0) {
-        console.log("prev");
+        //scroll wheel prev
+        if (direction !== "prev") {
+          direction = "prev";
+          console.log("Desktop ==>", direction);
 
-        if (step == 1) {
-          goto($store[pageId].prevPage, "prev");
+          animationPrev();
         }
-
-        if (step > 1) {
-          step--;
-        }
-        changeStep();
       } else {
-        console.log("next");
+        //scroll wheel next
+        if (direction !== "next") {
+          direction = "next";
+          console.log("Desktop ==>", direction);
 
-        if (step < 3) {
-          step++;
+          animationNext();
         }
-        changeStep();
-
-        console.log(step);
-        // if (step == 3) {
-        //   goto($store[pageId].nextPage, "next");
-        // }
       }
     }
   });
 }
 
-function changeStep() {
-  $(`${pageId} .pagination .arrow__down`).clearAnim();
+// animation prev
+function animationPrev() {
+  console.log("prev");
+}
 
-  if (step == 1) {
-    $(`${pageId} .pagination .arrow__up`).addClass("lock");
-
-    // content 1
-    gsap.to($(`${pageId} .content--${step}`), {
-      duration: 0.6,
-      y: 0,
-      alpha: 1,
-      delay: 0.4,
-    });
-
-    // content 2
-    gsap.to($(`${pageId} .content--${step + 1}`), {
-      duration: 0.6,
-      y: "10rem",
-      alpha: 0,
-    });
-  }
-
-  if (step == 2) {
-    {
-      $(`${pageId} .pagination .arrow__up`).removeClass("lock");
-
-      // content 1
-      gsap.to($(`${pageId} .content--${step - 1}`), {
-        duration: 0.6,
-        y: "-6rem",
-        alpha: 0,
-      });
-
-      // content 2
-      gsap.to($(`${pageId} .content--${step}`), {
-        duration: 0.6,
-        y: 0,
-        alpha: 1,
-        delay: 0.4,
-      });
-    }
-  }
+// animation next
+function animationNext() {
+  console.log("next");
+  goto("content1-page", "next");
 }
 
 preloadImages("");

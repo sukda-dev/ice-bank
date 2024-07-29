@@ -64,31 +64,7 @@ function loadPage(pagePath, script, json, nav) {
   function initLoadPage(pagePath) {
     var jsonPath;
 
-    // var chap3Game = [
-    //   "chap3-content2-page",
-    //   "chap3-game1-page",
-    //   "chap3-game2-page",
-    //   "chap3-game3-page",
-    // ];
-
-    // var chapIntro = [
-    //   "chap1-intro-page",
-    //   "chap2-intro-page",
-    //   "chap3-intro-page",
-    //   "chap4-intro-page",
-    // ];
-
-    // var chapVideo = ["chap1-video-page", "chap2-video-page"];
-
-    // if (chap3Game.includes(pagePath.slice(10, -5))) {
-    //   jsonPath = "chap3-game1-page.json";
-    // } else if (chapIntro.includes(pagePath.slice(10, -5))) {
-    //   jsonPath = "chap1-intro-page.json";
-    // } else if (chapVideo.includes(pagePath.slice(10, -5))) {
-    //   jsonPath = "chap1-video-page.json";
-    // } else {
     jsonPath = json;
-    // }
 
     loadLocalizableResources(
       "data/" + getCookie("lang") + "/" + jsonPath,
@@ -101,33 +77,6 @@ function loadPage(pagePath, script, json, nav) {
         });
 
         inArrayNavMod();
-
-        // SPECIFIC PAGE NAME
-        var getName = $(".page:not(.current)").data("menu");
-        $(".nav__page").hide();
-        var getPart = $(".page:not(.current)").data("part");
-        console.log("getPart " + getPart);
-
-        $(".menu_list li p").removeClass("active");
-        $(".menu_list li p[data-active=" + getPart + "]").addClass("active");
-
-        if (getName == 2) {
-          var getSubPart = $(".page:not(.current)").data("subpart");
-          $(".nav__page.page-sub-name--" + getSubPart).show();
-          switch (getPart) {
-            case 1:
-              $(".nav__page.page-name--4").show();
-              break;
-            case 2:
-              $(".nav__page.page-name--5").show();
-              break;
-            case 3:
-              $(".nav__page.page-name--6").show();
-              break;
-          }
-        } else {
-          $(".nav__page.page-name--" + getName).show();
-        }
       }
     );
   }
@@ -135,13 +84,7 @@ function loadPage(pagePath, script, json, nav) {
 
 function inArrayNavMod() {
   var pageName = $(".page:not(.current)").attr("id");
-  var hideHeader = [
-    "select-lang",
-    "chap2-part1-video1-page",
-    "chap2-part2-video1-page",
-    "chap2-part3-video1-page",
-  ];
-  var showHelpIcon = [];
+  var hideHeader = [];
 
   // HIDE HEADER
   if (hideHeader.includes(pageName)) {
@@ -149,64 +92,46 @@ function inArrayNavMod() {
   } else {
     header.fadeIn();
   }
-
-  if (showHelpIcon.includes(pageName)) {
-    $(`#header .help-icon`).fadeIn();
-  } else {
-    $(`#header .help-icon`).hide();
-  }
 }
 
 function pageAnimationBack() {
   $("html").offClick();
   $("#content .page").off("wheel");
 
-  var pageName = $(".page:not(.current)").attr("id");
-  var hideAnim = [];
-  if (hideAnim.includes(pageName)) {
-    gsap.to($("#content .page:not('.current')"), {
+  gsap.to($("#content .page.current"), {
+    alpha: 0,
+    duration: 0.5,
+    ease: Power4.easeInout,
+    onComplete: function () {},
+  });
+
+  gsap.to($("#content .page:not('.current')"), {
+    alpha: 1,
+    duration: 1.5,
+    ease: Power4.easeInout,
+    delay: 0.1,
+    onComplete: function () {},
+  });
+
+  gsap.fromTo(
+    $("#content .page:not('.current') .container"),
+    {
+      y: "-20%",
+      alpha: 0,
+    },
+    {
+      y: 0,
       alpha: 1,
       duration: 1,
       ease: Power4.easeInout,
-      delay: 0.1,
-      onComplete: function () {},
-    });
-  } else {
-    gsap.to($("#content .page.current"), {
-      alpha: 0.2,
-      duration: 1.5,
-      ease: Power4.easeInout,
-      onComplete: function () {},
-    });
-
-    gsap.to($("#content .page:not('.current')"), {
-      alpha: 1,
-      duration: 1.5,
-      ease: Power4.easeInout,
-      delay: 0.1,
-      onComplete: function () {},
-    });
-
-    gsap.fromTo(
-      $("#content .page:not('.current') .container"),
-      {
-        y: "-20%",
-        alpha: 0,
+      onComplete: function () {
+        // $(self).css('transform', 'none');
       },
-      {
-        y: 0,
-        alpha: 1,
-        duration: 1,
-        ease: Power4.easeInout,
-        onComplete: function () {
-          // $(self).css('transform', 'none');
-        },
-      }
-    );
-  }
+    }
+  );
 
   gsap.to($("#content"), {
-    top: $(window).innerHeight(),
+    // top: $(window).innerHeight(),
     duration: 1,
     ease: Power4.easeInout,
     onComplete: function () {
@@ -223,6 +148,7 @@ function pageAnimationBack() {
 function pageAnimationNext() {
   $("html").offClick();
   $("#content .page").off("wheel");
+  $("#content .page.current .pagination").hide();
 
   gsap.to($("#content .page:not('.current')"), {
     y: 0,

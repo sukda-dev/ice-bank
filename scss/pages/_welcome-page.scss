@@ -1,15 +1,12 @@
 #welcome-page {
-  @include fill-area;
-
-  .content-inner,
-  .card,
-  .card-backgroung {
-    @include fill-area;
-    overflow: hidden;
-  }
-
   .card {
     position: relative;
+    width: rem(879);
+    height: rem(1688);
+    margin: 0 auto;
+    padding: rem(85) 0 0;
+    z-index: 2;
+    @include bg-cov("../images/general/backdrop.png");
 
     .card-vactor {
       opacity: 0;
@@ -20,64 +17,64 @@
       &__1 {
         width: rem(80);
         height: rem(81);
-        top: rem(1378);
-        right: rem(199);
+        top: rem(1408);
+        right: rem(99);
         @include bg-cov("../images/pages/welcome-page/vactor1.png");
       }
       &__2 {
         width: rem(83);
         height: rem(106);
-        top: rem(1124);
-        right: rem(188);
+        top: rem(1154);
+        right: rem(88);
         @include bg-cov("../images/pages/welcome-page/vactor2.png");
       }
       &__3 {
         width: rem(79);
         height: rem(85);
-        top: rem(791);
-        right: rem(173);
+        top: rem(821);
+        right: rem(73);
         @include bg-cov("../images/pages/welcome-page/vactor3.png");
       }
       &__4 {
         width: rem(102);
         height: rem(84);
-        top: rem(626);
-        right: rem(201);
+        top: rem(656);
+        right: rem(101);
         @include bg-cov("../images/pages/welcome-page/vactor4.png");
       }
       &__5 {
         width: rem(80);
         height: rem(84);
-        top: rem(521);
+        top: rem(551);
         left: calc(50% - rem(40));
         @include bg-cov("../images/pages/welcome-page/vactor5.png");
       }
       &__6 {
         width: rem(74);
         height: rem(85);
-        top: rem(667);
-        left: rem(197);
+        top: rem(697);
+        left: rem(97);
         @include bg-cov("../images/pages/welcome-page/vactor6.png");
       }
       &__7 {
         width: rem(72);
         height: rem(106);
-        top: rem(938);
-        left: rem(161);
+        top: rem(968);
+        left: rem(61);
         @include bg-cov("../images/pages/welcome-page/vactor7.png");
       }
       &__8 {
         width: rem(77);
         height: rem(84);
-        top: rem(1164);
-        left: rem(168);
+        top: rem(1194);
+        left: rem(68);
         @include bg-cov("../images/pages/welcome-page/vactor8.png");
       }
       &__9 {
         width: rem(73);
         height: rem(102);
-        top: rem(1367);
-        left: rem(206);
+        top: rem(1397);
+        left: rem(106);
         @include bg-cov("../images/pages/welcome-page/vactor9.png");
       }
     }
@@ -86,7 +83,7 @@
       &__texts {
         position: relative;
         z-index: 3;
-        margin: rem(58) auto 0;
+        margin: 0 auto;
         .text-desc {
           opacity: 0;
           font-family: $font-pt-sans;
@@ -143,7 +140,7 @@
         height: rem(960);
         @include bg-cov("../images/pages/welcome-page/main.png");
         z-index: 3;
-        top: rem(528);
+        top: rem(555);
         left: calc(50% - rem(308));
         animation: fade-in 1s ease-in-out forwards;
         animation-delay: 2s;
