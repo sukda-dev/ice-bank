@@ -24,6 +24,7 @@ function animationHandle() {
     $(`${pageId} .card`),
     {
       top: "-160rem",
+      alpha: 1,
     },
     {
       top: 0,

@@ -1,7 +1,7 @@
 .pagination {
   position: absolute;
-  bottom: rem(100);
-  right: rem(40);
+  bottom: rem(30);
+  right: rem(30);
   z-index: 2;
   .arrow {
     @include flex-center-column;
