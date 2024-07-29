@@ -26,7 +26,7 @@ function animation_handle() {
     },
     {
       top: 0,
-      duration: 2,
+      duration: 3,
       ease: Power1.linear,
       onComplete: function () {
         eachFadeInByOpacity(elemArray, function () {});
@@ -36,6 +36,27 @@ function animation_handle() {
 }
 
 function game_handle() {
+  const tl = gsap
+    .timeline({ repeat: -1, yoyo: true })
+    .to("#envelope", {
+      duration: 0.75,
+      x: "+=5",
+      rotation: "+=5",
+      ease: "power1.inOut",
+    })
+    .to("#envelope", {
+      duration: 0.75,
+      x: "-=10",
+      rotation: "-=10",
+      ease: "power1.inOut",
+    })
+    .to("#envelope", {
+      duration: 0.75,
+      x: "+=5",
+      rotation: "+=5",
+      ease: "power1.inOut",
+    });
+
   if (!activeModule) {
     $(".envlope-wrapper").fadeInByFlex();
     $(".envlope-wrapper").on("click", function () {
@@ -43,6 +64,9 @@ function game_handle() {
       initSound();
       normalSound();
       open();
+
+      tl.pause();
+      gsap.to("#envelope", { duration: 0.5, x: 0, rotation: 0, ease: "power1.inOut" });
       activeModule = true;
 
       timeouts.push(
@@ -51,7 +75,7 @@ function game_handle() {
             animation_handle();
             pageControl();
           });
-        }, 1500)
+        }, 1800)
       );
     });
   } else {

@@ -28,7 +28,7 @@ function animationHandle() {
     },
     {
       top: 0,
-      duration: 2,
+      duration: 3,
       ease: Power1.linear,
       onComplete: function () {
         eachFadeInByOpacity(elemArray, function () {});

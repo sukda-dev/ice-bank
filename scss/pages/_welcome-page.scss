@@ -4,13 +4,15 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 4;
     @include fill-area;
     justify-content: center;
     flex-direction: column;
+    // background-color: #ffffff;
 
-    $color-env: #4f80e2;
+    $color-env: #ffd79a;
     $color-env2: darken($color-env, 3%);
-    $color-flap: darken($color-env, 20%);
+    $color-flap: darken($color-env, 8%);
     $color-bg: lighten($color-env, 48%);
     $color-heart: #d00000;
 
