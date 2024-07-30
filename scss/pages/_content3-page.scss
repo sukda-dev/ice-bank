@@ -44,13 +44,13 @@
     }
 
     .theme-colors {
-      opacity: 0;
       width: rem(740);
       margin: rem(46) auto 0;
       justify-content: space-between;
       @include flex;
 
       .theme-color {
+        opacity: 0;
         width: rem(120);
         color: #000000;
 

@@ -43,12 +43,12 @@
     }
 
     .group-detail {
-      opacity: 0;
       width: rem(643);
       @include flex;
       justify-content: space-between;
       margin: rem(48) auto 0;
       .detail {
+        opacity: 0;
         &__image {
           width: rem(142);
           height: rem(142);

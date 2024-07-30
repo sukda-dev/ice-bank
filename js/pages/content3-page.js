@@ -10,7 +10,11 @@ function animationHandle() {
   let elemArray = [
     $(".theme__subtitle"),
     $(".theme__title"),
-    $(".theme-colors"),
+    $(".theme-color").eq(0),
+    $(".theme-color").eq(1),
+    $(".theme-color").eq(2),
+    $(".theme-color").eq(3),
+    $(".theme-color").eq(4),
     $(".gallery__subtitle"),
     $(".gallery__title"),
     $(".swiper"),

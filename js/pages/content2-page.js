@@ -10,7 +10,9 @@ function animationHandle() {
   let elemArray = [
     $(".schedule__subtitle"),
     $(".schedule__title"),
-    $(".group-detail"),
+    $(".detail").eq(0),
+    $(".detail").eq(1),
+    $(".detail").eq(2),
     $(".map__pin"),
     $(".map__title"),
     $(".map__subtitle"),

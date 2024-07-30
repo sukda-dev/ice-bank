@@ -1,7 +1,7 @@
 var moduleStart = {
   init: function () {
     moduleStart.preloadImg();
-    moduleStart.setLang();
+    // moduleStart.setLang();
     moduleStart.setFirstPage();
     moduleStart.callMenu();
     moduleStart.calculateScreen();

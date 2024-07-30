@@ -21,6 +21,16 @@
     $env-height: 180px;
     $heart-width: 50px;
 
+    .ins {
+      position: absolute;
+      top: rem(-50);
+      left: 50%;
+      color: #ffffff;
+      z-index: 1;
+      transform: translateX(-50%);
+      font-family: $font-pt-sans;
+      font-size: rem(30);
+    }
     #envelope {
       position: relative;
       width: $env-width;

@@ -232,7 +232,7 @@ function eachFadeInByOpacity(elemArray, callback) {
           // Call the callback function
           callback();
         }
-      }, 500 * i)
+      }, 800 * i)
     );
   }
 }
