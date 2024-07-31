@@ -50,18 +50,18 @@
       z-index: 3;
     }
     .flap {
-      border-left: ($env-width / 2) solid transparent;
-      border-right: ($env-width / 2) solid transparent;
-      border-bottom: ($env-height / 2) - 8 solid transparent; /* a little smaller */
-      border-top: ($env-height / 2) + 8 solid $color-flap; /* a little larger */
+      border-left: calc($env-width / 2) solid transparent;
+      border-right: calc($env-width / 2) solid transparent;
+      border-bottom: calc($env-height / 2) - 8 solid transparent; /* a little smaller */
+      border-top: calc($env-height / 2) + 8 solid $color-flap; /* a little larger */
       transform-origin: top;
       pointer-events: none;
     }
     .pocket {
-      border-left: ($env-width / 2) solid $color-env;
-      border-right: ($env-width / 2) solid $color-env;
-      border-bottom: ($env-height / 2) solid $color-env2;
-      border-top: ($env-height / 2) solid transparent;
+      border-left: calc($env-width / 2) solid $color-env;
+      border-right: calc($env-width / 2) solid $color-env;
+      border-bottom: calc($env-height / 2) solid $color-env2;
+      border-top: calc($env-height / 2) solid transparent;
       border-bottom-left-radius: $env-border-radius;
       border-bottom-right-radius: $env-border-radius;
     }
@@ -127,13 +127,13 @@
       z-index: 1;
     }
     .open .letter {
-      transform: translateY(-($env-height / 3));
+      transform: translateY(- calc($env-height / 3));
       transition: transform 0.4s 0.6s ease, z-index 0.6s;
       z-index: 2;
     }
     .hearts {
       position: absolute;
-      top: ($env-height / 2);
+      top: calc($env-height / 2);
       left: 0;
       right: 0;
       z-index: 2;
