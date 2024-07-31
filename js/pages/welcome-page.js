@@ -15,7 +15,7 @@ function animation_handle() {
     $(".group-date"),
     $(".card__main"),
     $(".card-vactor"),
-    $(".pagination"),
+    $(".arrow"),
   ];
 
   gsap.fromTo(
@@ -29,7 +29,9 @@ function animation_handle() {
       duration: 3,
       ease: Power1.linear,
       onComplete: function () {
-        eachFadeInByOpacity(elemArray, function () {});
+        eachFadeInByOpacity(elemArray, function () {
+          $(".arrow").arrowPulse();
+        });
       },
     }
   );
@@ -66,7 +68,12 @@ function game_handle() {
       open();
 
       tl.pause();
-      gsap.to("#envelope", { duration: 0.5, x: 0, rotation: 0, ease: "power1.inOut" });
+      gsap.to("#envelope", {
+        duration: 0.5,
+        x: 0,
+        rotation: 0,
+        ease: "power1.inOut",
+      });
       activeModule = true;
 
       timeouts.push(
@@ -161,6 +168,7 @@ function animationPrev() {
 // animation next
 function animationNext() {
   console.log("next");
+  $(".arrow").clearAnim();
   goto("content1-page", "next");
 }
 

@@ -138,7 +138,7 @@ $.fn.arrowPulse = function (delay) {
     delay: delay,
   });
   gsap.to($(this), {
-    x: "0.3rem",
+    y: "0.3rem",
     repeat: -1,
     yoyo: true,
     duration: 0.4,

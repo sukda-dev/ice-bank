@@ -161,18 +161,18 @@ function pageAnimationNext() {
     },
   });
 
-  gsap.fromTo(
-    $("#content .page:not('.current') .container"),
-    {
-      y: "20%",
-    },
-    {
-      y: 0,
-      alpha: 1,
-      duration: 1,
-      ease: Power0.easeNone,
-    }
-  );
+  // gsap.fromTo(
+  //   $("#content .page:not('.current') .container"),
+  //   {
+  //     y: "20%",
+  //   },
+  //   {
+  //     y: 0,
+  //     alpha: 1,
+  //     duration: 1,
+  //     ease: Power0.easeNone,
+  //   }
+  // );
 
   gsap.to($("#content"), {
     top: -$(window).innerHeight(),

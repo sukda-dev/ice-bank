@@ -1,7 +1,7 @@
 var moduleStart = {
   init: function () {
     moduleStart.preloadImg();
-    // moduleStart.setLang();
+    moduleStart.setLang();
     moduleStart.setFirstPage();
     moduleStart.callMenu();
     moduleStart.calculateScreen();
@@ -17,7 +17,7 @@ var moduleStart = {
   // SET LANGUAGE
   setLang: function () {
     if (!GetURLParameter("_lang")) {
-      window.location = "?_lang=en-gb";
+      // window.location = "?_lang=en-gb";
       setCookie("lang", "en-gb", 365);
       lang = "en-gb";
     } else {
@@ -36,11 +36,12 @@ var moduleStart = {
     loadLocalizableResources(
       "data/" + getCookie("lang") + "/base.json",
       function () {
-        if (GetURLParameter("_goto")) {
-          goto(GetURLParameter("_goto"));
-        } else {
-          goto("welcome-page");
-        }
+        // if (GetURLParameter("_goto")) {
+        //   goto(GetURLParameter("_goto"));
+        // } else {
+        //   goto("welcome-page");
+        // }
+        goto("welcome-page");
       }
     );
 

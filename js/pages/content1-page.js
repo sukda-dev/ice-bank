@@ -18,6 +18,7 @@ function animationHandle() {
     $(".countdown__subtitle"),
     $(".countdown__desc"),
     $(".countdown-times"),
+    $(".arrow"),
   ];
 
   gsap.fromTo(
@@ -31,7 +32,9 @@ function animationHandle() {
       duration: 3,
       ease: Power1.linear,
       onComplete: function () {
-        eachFadeInByOpacity(elemArray, function () {});
+        eachFadeInByOpacity(elemArray, function () {
+          $(".arrow").arrowPulse();
+        });
       },
     }
   );
@@ -110,6 +113,7 @@ function animationPrev() {
 // animation next
 function animationNext() {
   console.log("next");
+  $(".arrow").clearAnim();
   goto("content2-page", "next");
 }
 
