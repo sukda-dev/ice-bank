@@ -122,7 +122,7 @@ function pageAnimationBack() {
     {
       y: 0,
       alpha: 1,
-      duration: 1,
+      duration: 0.8,
       ease: Power4.easeInout,
       onComplete: function () {
         // $(self).css('transform', 'none');
@@ -176,7 +176,7 @@ function pageAnimationNext() {
 
   gsap.to($("#content"), {
     top: -$(window).innerHeight(),
-    duration: 1,
+    duration: 0.8,
     // 1.7
     ease: Power4.easeInout,
     delay: 0.1,

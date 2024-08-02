@@ -45,14 +45,14 @@ function gameHandle() {
 
   // btn arrow up
   $(`${pageId} .pagination .arrow__up`).on("click", function () {
-    console.log("arrow up");
+    // console.log("arrow up");
 
     animationPrev();
   });
 
   // btn arrow down
-  $(`${pageId} .pagination .arrow__down`).on("click", function () {
-    console.log("arrow down");
+  $(`${pageId} .pagination .arrow__down, .arrow`).on("click", function () {
+    // console.log("arrow down");
     $(this).clearAnim();
 
     animationNext();
@@ -87,7 +87,7 @@ function scrollSlidePage() {
         //scroll wheel prev
         if (direction !== "prev") {
           direction = "prev";
-          console.log("Desktop ==>", direction);
+          // console.log("Desktop ==>", direction);
 
           animationPrev();
         }
@@ -95,7 +95,7 @@ function scrollSlidePage() {
         //scroll wheel next
         if (direction !== "next") {
           direction = "next";
-          console.log("Desktop ==>", direction);
+          // console.log("Desktop ==>", direction);
 
           animationNext();
         }
@@ -106,13 +106,13 @@ function scrollSlidePage() {
 
 // animation prev
 function animationPrev() {
-  console.log("prev");
+  // console.log("prev");
   goto("welcome-page", "prev");
 }
 
 // animation next
 function animationNext() {
-  console.log("next");
+  // console.log("next");
   $(".arrow").clearAnim();
   goto("content2-page", "next");
 }
