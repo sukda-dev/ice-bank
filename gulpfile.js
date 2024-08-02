@@ -185,13 +185,14 @@ function uglifyLibrary() {
       "js/libs/splitType.js",
       "js/libs/swiper.min.js",
       "js/libs/selectcustomizer.min.js",
+      "js/libs/lightbox.min.js",
     ])
     .pipe(
       babel({
         presets: [["@babel/preset-env", { modules: false }]],
       })
     )
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(concat("library.js"))
     .pipe(gulp.dest("js"));
 }

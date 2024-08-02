@@ -139,6 +139,7 @@
       margin: rem(19) auto 0;
 
       .album-block {
+        width: calc(100% / 3);
         @include flex-column;
         gap: rem(13);
       }

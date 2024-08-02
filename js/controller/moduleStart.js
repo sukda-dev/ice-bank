@@ -36,12 +36,12 @@ var moduleStart = {
     loadLocalizableResources(
       "data/" + getCookie("lang") + "/base.json",
       function () {
-        // if (GetURLParameter("_goto")) {
-        //   goto(GetURLParameter("_goto"));
-        // } else {
-        //   goto("welcome-page");
-        // }
-        goto("welcome-page");
+        if (GetURLParameter("_goto")) {
+          goto(GetURLParameter("_goto"));
+        } else {
+          goto("welcome-page");
+        }
+        // goto("welcome-page");
       }
     );
 

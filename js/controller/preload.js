@@ -8,7 +8,11 @@ function preloadImages(expression) {
         "images/general/backdrop-back.png",
         "images/general/backdrop.png",
         "images/general/bg.png",
+        "images/general/close.png",
+        "images/general/loading.gif",
         "images/general/mountain.png",
+        "images/general/next.png",
+        "images/general/prev.png",
         "images/general/swiper-arrow-next.png",
         "images/general/swiper-arrow-prev.png"
       );
