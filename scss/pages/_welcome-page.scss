@@ -363,14 +363,14 @@
           font-family: $font-pt-sans;
           font-size: rem(24);
           line-height: rem(31);
-          color: #b3917b;
+          color: $brown;
         }
         .text-name {
           opacity: 0;
           font-family: $font-good-vibrations;
           font-size: rem(96);
           line-height: rem(134);
-          color: #b3917b;
+          color: $brown;
           margin: rem(21) auto;
         }
 
@@ -386,12 +386,12 @@
           .text-date {
             font-family: $font-angsana;
             font-size: rem(48);
-            color: #b3917b;
+            color: $brown;
 
             &--bold {
               font-family: $font-amethysta;
               font-size: rem(96);
-              color: #b3917b;
+              color: $brown;
             }
           }
         }

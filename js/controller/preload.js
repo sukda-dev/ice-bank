@@ -9,6 +9,7 @@ function preloadImages(expression) {
         "images/general/backdrop.png",
         "images/general/bg.png",
         "images/general/close.png",
+        "images/general/favicon.ico",
         "images/general/loading.gif",
         "images/general/mountain.png",
         "images/general/next.png",
@@ -36,6 +37,7 @@ function preloadImages(expression) {
     // content3-page
     case "content3-page":
       $.preloadImages(
+        "images/pages/content3-page/butterfly.png",
         "images/pages/content3-page/image1.jpg",
         "images/pages/content3-page/image10.jpg",
         "images/pages/content3-page/image11.jpg",

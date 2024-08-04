@@ -13,11 +13,10 @@
 
 ================================================== */
 
-$btnWidthD: rem(450);
-$btnWidthM: rem(880);
-$btnHeightD: rem(80);
-$btnHeightM: rem(138);
-$background: $black;
+$btnWidthD: rem(200);
+$btnHeightD: rem(70);
+
+$background: $brown;
 $pulseBackground: $grey;
 
 button {
@@ -40,41 +39,14 @@ button {
   padding: rem(5) rem(25);
   background-color: $background;
   color: $white;
-  font-size: rem(24);
+  font-family: $font-pt-sans;
+  font-size: rem(26);
   font-weight: $light;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
   border: rem(3) solid $white;
-
-  @include for-mobile {
-    max-width: $btnWidthM;
-    min-height: $btnHeightM;
-    font-size: rem(50);
-    padding: rem(5) rem(25);
-  }
+  border-radius: rem(16);
 
   &:hover {
     opacity: 0.85;
-  }
-
-  &--secondary {
-    color: $white;
-    border: none;
-    background-color: rgba($color: $white, $alpha: 0.5);
-  }
-
-  &--match {
-    color: $white;
-    border: none;
-    background-color: rgba($color: $white, $alpha: 0.5);
-    width: rem(333);
-    height: rem(120);
-    font-weight: $light;
-    font-size: rem(50);
-
-    @include for-desktop {
-      width: rem(281);
-      height: rem(80);
-      font-size: rem(40);
-    }
   }
 }

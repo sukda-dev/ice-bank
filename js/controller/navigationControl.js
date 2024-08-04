@@ -21,8 +21,6 @@ function loadPage(pagePath, script, json, nav) {
   $("#content .page").addClass("current");
   if (nav) {
     $.get(pagePath, function (data) {
-      //TODO
-
       if (!$("html").hasClass("load")) {
         $("html").addClass("load");
         if (nav == "next") {
@@ -161,23 +159,9 @@ function pageAnimationNext() {
     },
   });
 
-  // gsap.fromTo(
-  //   $("#content .page:not('.current') .container"),
-  //   {
-  //     y: "20%",
-  //   },
-  //   {
-  //     y: 0,
-  //     alpha: 1,
-  //     duration: 1,
-  //     ease: Power0.easeNone,
-  //   }
-  // );
-
   gsap.to($("#content"), {
     top: -$(window).innerHeight(),
     duration: 0.8,
-    // 1.7
     ease: Power4.easeInout,
     delay: 0.1,
     onComplete: function () {

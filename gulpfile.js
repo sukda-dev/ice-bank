@@ -182,10 +182,9 @@ function uglifyLibrary() {
       "js/libs/jquery.ui.touch-punch.min.js",
       "js/libs/jquery.mousewheel.min.js",
       "js/libs/gsap.min.js",
-      "js/libs/splitType.js",
       "js/libs/swiper.min.js",
-      "js/libs/selectcustomizer.min.js",
       "js/libs/lightbox.min.js",
+      "js/libs/howler.js",
     ])
     .pipe(
       babel({

@@ -16,7 +16,7 @@
       position: relative;
       width: fit-content;
       font-family: $font-quentin;
-      text-shadow: -1px 0 #b3917b;
+      text-shadow: -1px 0 $brown;
       font-size: rem(96);
       margin: 0 auto;
 
@@ -27,7 +27,7 @@
         width: rem(180);
         height: 1px;
         top: calc(50% - 0.75px);
-        background-color: #b3917b;
+        background-color: $brown;
       }
 
       &::before {
@@ -72,7 +72,7 @@
         width: rem(180);
         height: 1px;
         top: calc(50% - 0.75px);
-        background-color: #b3917b;
+        background-color: $brown;
       }
 
       &::before {

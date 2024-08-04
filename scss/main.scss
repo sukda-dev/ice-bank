@@ -8,28 +8,21 @@
 
 // vendors
 @import "vendors/swiper";
-@import "vendors/video";
 @import "vendors/lightbox";
 
 // layout
 @import "layout/setting";
-@import "layout/menu";
 @import "layout/background";
-@import "layout/popup";
 @import "layout/content";
-@import "layout/video";
 
 // components
 @import "components/loading";
 @import "components/scrollbar";
-@import "components/text";
 @import "components/button";
 @import "components/pagination";
-@import "components/menu-divider";
 
 // pages
 @import "pages/welcome-page";
-
 @import "pages/content1-page";
 @import "pages/content2-page";
 @import "pages/content3-page";

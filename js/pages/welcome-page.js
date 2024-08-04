@@ -97,16 +97,12 @@ function pageControl() {
 
   // btn arrow up
   $(`${pageId} .pagination .arrow__up`).on("click", function () {
-    // console.log("arrow up");
-
     animationPrev();
   });
 
   // btn arrow down
   $(`${pageId} .pagination .arrow__down, .arrow`).on("click", function () {
-    // console.log("arrow down");
     $(this).clearAnim();
-
     animationNext();
   });
 }
@@ -143,16 +139,12 @@ function scrollSlidePage() {
         //scroll wheel prev
         if (direction !== "prev") {
           direction = "prev";
-          // console.log("Desktop ==>", direction);
-
           animationPrev();
         }
       } else {
         //scroll wheel next
         if (direction !== "next") {
           direction = "next";
-          // console.log("Desktop ==>", direction);
-
           animationNext();
         }
       }
@@ -162,14 +154,12 @@ function scrollSlidePage() {
 
 // animation prev
 function animationPrev() {
-  // console.log("prev");
 }
 
 // animation next
 function animationNext() {
-  // console.log("next");
   $(".arrow").clearAnim();
   goto("content1-page", "next");
 }
 
-preloadImages("");
+preloadImages("content1-page");

@@ -3,7 +3,6 @@ var moduleStart = {
     moduleStart.preloadImg();
     moduleStart.setLang();
     moduleStart.setFirstPage();
-    moduleStart.callMenu();
     moduleStart.calculateScreen();
     moduleStart.disableLog();
   },
@@ -58,11 +57,6 @@ var moduleStart = {
         delay: 0,
       }
     );
-  },
-
-  // INIT THE MENU FUNCTION
-  callMenu: function () {
-    menuControl();
   },
 
   // DISABLE ALL LOG WHEN IT'S NOT IN A LOCALHOST
