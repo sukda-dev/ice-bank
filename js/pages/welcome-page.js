@@ -46,7 +46,7 @@ function game_handle() {
       : `${inviteName}`;
 
   // Set name
-  $(`${pageId} #invite`).text(inviteFull);
+  $(`${pageId} #invite`).text(inviteFull != "undefined" ? inviteFull : "");
 
   const tl = gsap
     .timeline({ repeat: -1, yoyo: true })
