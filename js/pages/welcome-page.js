@@ -38,6 +38,16 @@ function animation_handle() {
 }
 
 function game_handle() {
+  var inviteName = GetURLParameter("_invite-name");
+  var inviteLastName = GetURLParameter("_invite-last");
+  var inviteFull =
+    typeof inviteLastName != "undefined"
+      ? `${inviteName} & ${inviteLastName}`
+      : `${inviteName}`;
+
+  // Set name
+  $(`${pageId} #invite`).text(inviteFull);
+
   const tl = gsap
     .timeline({ repeat: -1, yoyo: true })
     .to("#envelope", {
@@ -63,6 +73,7 @@ function game_handle() {
     $(".envlope-wrapper").fadeInByFlex();
     $(".envlope-wrapper").on("click", function () {
       $(this).offClick();
+      $(`${pageId} .ins`).hide();
       initSound();
       normalSound();
       open();
@@ -153,8 +164,7 @@ function scrollSlidePage() {
 }
 
 // animation prev
-function animationPrev() {
-}
+function animationPrev() {}
 
 // animation next
 function animationNext() {

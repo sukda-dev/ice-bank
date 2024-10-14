@@ -22,14 +22,41 @@
     $heart-width: 50px;
 
     .ins {
+      width: rem(260);
+      height: rem(130);
       position: absolute;
-      top: rem(-50);
-      left: 50%;
-      color: #ffffff;
-      z-index: 1;
-      transform: translateX(-50%);
-      font-family: $font-pt-sans;
-      font-size: rem(30);
+      left: calc(50% - (rem(260) / 2));
+      top: rem(20);
+      background-color: $white;
+      z-index: 5;
+      padding: rem(20);
+      color: #585858;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: rem(240);
+        height: rem(110);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: solid 0.5px #929292;
+      }
+
+      &__sub {
+        font-family: $font-good-vibrations;
+        font-size: rem(30);
+
+        &--small {
+          font-size: rem(24);
+        }
+      }
+
+      &__main {
+        font-size: rem(30);
+        padding: rem(5);
+        @include flex-center;
+      }
     }
     #envelope {
       position: relative;
