@@ -175,25 +175,28 @@ function uglifyPages() {
 }
 
 function uglifyLibrary() {
-  return gulp
-    .src([
-      "js/libs/jquery.min.js",
-      "js/libs/jquery-ui.min.js",
-      "js/libs/jquery.ui.touch-punch.min.js",
-      "js/libs/jquery.mousewheel.min.js",
-      "js/libs/gsap.min.js",
-      "js/libs/swiper.min.js",
-      "js/libs/lightbox.min.js",
-      "js/libs/howler.js",
-    ])
-    .pipe(
-      babel({
-        presets: [["@babel/preset-env", { modules: false }]],
-      })
-    )
-    // .pipe(uglify())
-    .pipe(concat("library.js"))
-    .pipe(gulp.dest("js"));
+  return (
+    gulp
+      .src([
+        "js/libs/jquery.min.js",
+        "js/libs/jquery-ui.min.js",
+        "js/libs/jquery.ui.touch-punch.min.js",
+        "js/libs/jquery.mousewheel.min.js",
+        "js/libs/gsap.min.js",
+        "js/libs/swiper.min.js",
+        "js/libs/lightbox.min.js",
+        "js/libs/howler.js",
+        "js/libs/qrcode.min.js",
+      ])
+      .pipe(
+        babel({
+          presets: [["@babel/preset-env", { modules: false }]],
+        })
+      )
+      // .pipe(uglify())
+      .pipe(concat("library.js"))
+      .pipe(gulp.dest("js"))
+  );
 }
 
 function uglifyTemplateJS() {

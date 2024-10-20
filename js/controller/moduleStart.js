@@ -10,7 +10,7 @@ var moduleStart = {
   // PRELOAD GENERAL IMAGE FOLDER AND FIRST PAGE
   preloadImg: function () {
     preloadImages("general");
-    preloadImages("select-lang");
+    preloadImages("welcome-page");
   },
 
   // SET LANGUAGE
@@ -40,7 +40,6 @@ var moduleStart = {
         } else {
           goto("welcome-page");
         }
-        // goto("welcome-page");
       }
     );
 

@@ -1,0 +1,191 @@
+#invite-page {
+  .card {
+    opacity: 0;
+    position: relative;
+    width: rem(960);
+    height: rem(1788);
+    margin: 0 auto;
+    padding: rem(65) rem(45) 0;
+    z-index: 2;
+    @include bg-cov("../images/general/backdrop-back.png");
+
+    .card-vactor {
+      opacity: 0;
+      position: absolute;
+      z-index: 3;
+      animation: rotate-vactor 2s ease-in-out infinite;
+      animation-delay: 2s;
+      &__1 {
+        width: rem(61);
+        height: rem(64.8);
+        top: rem(680);
+        right: rem(-24);
+        @include bg-cov("../images/pages/welcome-page/vactor1.png");
+      }
+      &__2 {
+        width: rem(66.4);
+        height: rem(84.8);
+        top: rem(476.8);
+        right: rem(-32);
+        @include bg-cov("../images/pages/welcome-page/vactor2.png");
+      }
+      &__3 {
+        width: rem(63.2);
+        height: rem(68);
+        top: rem(210.4);
+        right: rem(-44);
+        @include bg-cov("../images/pages/welcome-page/vactor3.png");
+      }
+      &__4 {
+        width: rem(81.6);
+        height: rem(67.2);
+        top: rem(78.4);
+        right: rem(-21.6);
+        @include bg-cov("../images/pages/welcome-page/vactor4.png");
+      }
+      &__5 {
+        width: rem(64);
+        height: rem(67.2);
+        top: 0;
+        left: calc(50% - rem(32));
+        @include bg-cov("../images/pages/welcome-page/vactor5.png");
+      }
+      &__6 {
+        width: rem(59.2);
+        height: rem(68);
+        top: rem(112);
+        left: rem(-28.8);
+        @include bg-cov("../images/pages/welcome-page/vactor6.png");
+      }
+      &__7 {
+        width: rem(57.6);
+        height: rem(84.8);
+        top: rem(333.6);
+        left: rem(-84.8);
+        @include bg-cov("../images/pages/welcome-page/vactor7.png");
+      }
+      &__8 {
+        width: rem(61.6);
+        height: rem(67.2);
+        top: rem(508.8);
+        left: rem(-52);
+        @include bg-cov("../images/pages/welcome-page/vactor8.png");
+      }
+      &__9 {
+        width: rem(58.4);
+        height: rem(81.6);
+        top: rem(672);
+        left: rem(-24);
+        @include bg-cov("../images/pages/welcome-page/vactor9.png");
+      }
+    }
+
+    .card {
+      &__texts {
+        position: relative;
+        z-index: 3;
+        margin: 0 auto;
+        .text-desc {
+          opacity: 0;
+          font-family: $font-pt-sans;
+          font-size: rem(24);
+          line-height: rem(31);
+          color: $brown;
+        }
+        .text-name {
+          opacity: 0;
+          font-family: $font-good-vibrations;
+          font-size: rem(96);
+          line-height: rem(134);
+          color: $brown;
+          margin: rem(20) auto;
+        }
+      }
+
+      &__main {
+        opacity: 0;
+        position: relative;
+        width: rem(492.8);
+        height: rem(768);
+        margin: 0 auto;
+    
+        .card-image {
+          @include fill-area;
+          @include bg-cov("../images/pages/welcome-page/main.png");
+          z-index: 3;
+          margin: 0 auto;
+        }
+      }
+
+      &__invite {
+        opacity: 0;
+        margin: rem(48) auto 0;
+
+        .invite {
+          &__title {
+            font-family: $font-noto;
+            font-size: rem(42);
+            margin-bottom: rem(32);
+          }
+          &__name {
+            font-family: $font-noto;
+            font-size: rem(32);
+          }
+          &__inputs {
+            @include flex-center;
+            gap: rem(25);
+
+            &:nth-child(3) {
+              margin-top: rem(25);
+            }
+
+            input {
+              width: rem(375);
+              border: none;
+            }
+          }
+          &__button {
+            margin-top: rem(48);
+          }
+
+          &__qrcode {
+            width: rem(260);
+            height: rem(260);
+            margin-top: rem(25);
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    opacity: 0;
+  }
+
+  @keyframes rotate-vactor {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    12.5% {
+      transform: rotate(-15deg);
+    }
+    37.5% {
+      transform: rotate(15deg);
+    }
+    62.5% {
+      transform: rotate(-15deg);
+    }
+    87.5% {
+      transform: rotate(15deg);
+    }
+  }
+  @keyframes scroll-background {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

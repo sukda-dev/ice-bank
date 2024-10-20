@@ -38,15 +38,18 @@ function animation_handle() {
 }
 
 function game_handle() {
-  var inviteName = GetURLParameter("_invite-name");
-  var inviteLastName = GetURLParameter("_invite-last");
-  var inviteFull =
-    typeof inviteLastName != "undefined"
-      ? `${inviteName} & ${inviteLastName}`
-      : `${inviteName}`;
+  var url = new URL(window.location.href);
+  var params = new URLSearchParams(url.search);
+
+  var inviteName1 = params.get("_invite1");
+  var inviteName2 = params.get("_invite2");
+
+  var textInvite1 = typeof inviteName1 != "undefined" && inviteName1 != null ? `${inviteName1}` : ``;
+  var textInvite2 = typeof inviteName2 != "undefined" && inviteName2 != null ? `${inviteName2}` : ``;
 
   // Set name
-  $(`${pageId} #invite`).text(inviteFull != "undefined" ? inviteFull : "");
+  $(`${pageId} #invite1`).text(textInvite1);
+  $(`${pageId} #invite2`).text(textInvite2);
 
   const tl = gsap
     .timeline({ repeat: -1, yoyo: true })
