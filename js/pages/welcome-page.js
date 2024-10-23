@@ -57,6 +57,12 @@ function game_handle() {
   $(`${pageId} #invite1`).text(textInvite1);
   $(`${pageId} #invite2`).text(textInvite2);
 
+  // Language
+  if (detectLanguage(textInvite1) == "th") {
+    $(`${pageId} #invite1, ${pageId} #invite2`).attr("lang", "th");
+  }
+  
+
   const tl = gsap
     .timeline({ repeat: -1, yoyo: true })
     .to(".envlope-wrapper__inner", {
@@ -181,6 +187,21 @@ function animationPrev() {}
 function animationNext() {
   $(".arrow").clearAnim();
   goto("content1-page", "next");
+}
+
+function detectLanguage(text) {
+  var lang = "unknown";
+
+  // English (en-gb)
+  if (/[a-zA-Z]/.test(text)) {
+    lang = "en-gb";
+  }
+  // Thai (th)
+  else if (/[ก-ฮ]/.test(text)) {
+    lang = "th";
+  }
+
+  return lang;
 }
 
 preloadImages("content1-page");

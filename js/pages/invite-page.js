@@ -13,7 +13,6 @@ function animationHandle() {
     $(".card__main"),
     $(".card-vactor"),
     $(".card__invite"),
-    $(".arrow"),
   ];
 
   gsap.fromTo(
@@ -27,9 +26,7 @@ function animationHandle() {
       duration: 3,
       ease: Power1.linear,
       onComplete: function () {
-        eachFadeInByOpacity(elemArray, function () {
-          $(".arrow").arrowPulse();
-        });
+        eachFadeInByOpacity(elemArray, function () {});
       },
     }
   );

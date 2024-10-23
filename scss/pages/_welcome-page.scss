@@ -192,40 +192,50 @@
     }
 
     .ins {
-      width: rem(350);
-      height: rem(200);
+      width: rem(600);
+      height: rem(400);
       position: absolute;
-      left: calc(50% - (rem(350) / 2));
-      top: calc(50% - (rem(250) / 2));
-      background-color: $white;
+      left: calc(50% - (rem(600) / 2));
+      top: calc(50% - (rem(400) / 2));
+      // background-color: $white;
       z-index: 5;
       padding: rem(20);
       color: #585858;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: rem(320);
-        height: rem(170);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: solid 0.5px #929292;
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   width: rem(420);
+      //   height: rem(190);
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+      //   border: solid 0.5px #929292;
+      // }
 
       &__sub {
-        font-family: $font-good-vibrations;
-        font-size: rem(38);
-
-        &--small {
-          font-size: rem(24);
-        }
+        font-family: $font-pt-sans;
+        font-size: rem(24);
+        padding: rem(5) 0 rem(10);
       }
 
       &__main {
-        font-size: rem(30);
+        // background-color: red;
+        height: rem(260);
+        max-height: rem(260);
+
         padding: rem(5);
-        @include flex-center;
+        @include flex-column;
+        justify-content: center;
+      }
+
+      &__name {
+        font-family: $font-good-vibrations;
+        font-size: rem(96);
+
+        &:lang(th) {
+          font-size: rem(64);
+        }
       }
     }
 
