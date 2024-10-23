@@ -1,14 +1,13 @@
 #welcome-page {
   .envlope-wrapper {
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 4;
+    @include flex-center;
     @include fill-area;
-    justify-content: center;
-    flex-direction: column;
-    // background-color: #ffffff;
+    &__inner {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+    }
 
     $color-env: #ffd79a;
     $color-env2: darken($color-env, 3%);
@@ -21,51 +20,14 @@
     $env-height: 180px;
     $heart-width: 50px;
 
-    .ins {
-      width: rem(260);
-      height: rem(130);
-      position: absolute;
-      left: calc(50% - (rem(260) / 2));
-      top: rem(20);
-      background-color: $white;
-      z-index: 5;
-      padding: rem(20);
-      color: #585858;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: rem(240);
-        height: rem(110);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: solid 0.5px #929292;
-      }
-
-      &__sub {
-        font-family: $font-good-vibrations;
-        font-size: rem(30);
-
-        &--small {
-          font-size: rem(24);
-        }
-      }
-
-      &__main {
-        font-size: rem(30);
-        padding: rem(5);
-        @include flex-center;
-      }
-    }
     #envelope {
       position: relative;
       width: $env-width;
       height: $env-height;
       border-bottom-left-radius: $env-border-radius;
       border-bottom-right-radius: $env-border-radius;
-      margin-left: auto;
-      margin-right: auto;
+      // margin-left: auto;
+      // margin-right: auto;
       // top: 150px;
       background-color: $color-flap;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -79,8 +41,8 @@
     .flap {
       border-left: calc($env-width / 2) solid transparent;
       border-right: calc($env-width / 2) solid transparent;
-      border-bottom: calc($env-height / 2) - 8 solid transparent; /* a little smaller */
-      border-top: calc($env-height / 2) + 8 solid $color-flap; /* a little larger */
+      border-bottom: calc(($env-height / 2) - 8px) solid transparent; /* a little smaller */
+      border-top: calc(($env-height / 2) + 8px) solid $color-flap; /* a little larger */
       transform-origin: top;
       pointer-events: none;
     }
@@ -154,47 +116,11 @@
       z-index: 1;
     }
     .open .letter {
-      transform: translateY(- calc($env-height / 3));
+      transform: translateY(calc($env-height / 3) * -1);
       transition: transform 0.4s 0.6s ease, z-index 0.6s;
       z-index: 2;
     }
-    .hearts {
-      position: absolute;
-      top: calc($env-height / 2);
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-    .heart {
-      position: absolute;
-      bottom: 0;
-      right: 10%;
-      pointer-events: none;
-    }
 
-    .heart:before,
-    .heart:after {
-      position: absolute;
-      content: "";
-      left: $heart-width;
-      top: 0;
-      width: $heart-width;
-      height: ($heart-width * 1.6);
-      background: $color-heart;
-      border-radius: $heart-width $heart-width 0 0;
-      transform: rotate(-45deg);
-      transform-origin: 0 100%;
-      pointer-events: none;
-    }
-    .heart:after {
-      left: 0;
-      transform: rotate(45deg);
-      transform-origin: 100% 100%;
-    }
-    .close .heart {
-      opacity: 0;
-      animation: none;
-    }
     .a1 {
       left: 20%;
       -webkit-transform: scale(0.6);
@@ -265,37 +191,61 @@
       }
     }
 
-    body {
-      background-color: $color-bg;
+    .ins {
+      width: rem(350);
+      height: rem(200);
+      position: absolute;
+      left: calc(50% - (rem(350) / 2));
+      top: calc(50% - (rem(250) / 2));
+      background-color: $white;
+      z-index: 5;
+      padding: rem(20);
+      color: #585858;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: rem(320);
+        height: rem(170);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: solid 0.5px #929292;
+      }
+
+      &__sub {
+        font-family: $font-good-vibrations;
+        font-size: rem(38);
+
+        &--small {
+          font-size: rem(24);
+        }
+      }
+
+      &__main {
+        font-size: rem(30);
+        padding: rem(5);
+        @include flex-center;
+      }
     }
-    .envlope-wrapper {
-      height: ($env-height + 200px);
+
+    .envelope-back {
+      position: absolute;
+      width: $env-width;
+      height: $env-height;
+      background-color: $color-env2;
+      left: 0;
+      top: 0;
     }
-    .reset {
-      text-align: center;
+
+    .envelope-front,
+    .envelope-back {
+      backface-visibility: hidden;
+      transition: all 2s;
     }
-    .reset button {
-      font-weight: 800;
-      font-style: normal;
-      transition: all 0.1s linear;
-      -webkit-appearance: none;
-      background-color: transparent;
-      border: solid 2px $color-env;
-      border-radius: 4px;
-      color: $color-env;
-      display: inline-block;
-      font-size: 14px;
-      text-transform: uppercase;
-      margin: 5px;
-      padding: 10px;
-      line-height: 1em;
-      text-decoration: none;
-      min-width: 120px;
-      cursor: pointer;
-    }
-    .reset button:hover {
-      background-color: $color-env;
-      color: #fff;
+
+    .rotation {
+      transform: rotateY(180deg);
     }
   }
 

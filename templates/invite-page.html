@@ -30,9 +30,19 @@
           <p class="invite__name">ชื่อ - นามสกุล :</p>
           <input type="text" class="invite__input" id="input2" />
         </div>
-        <button class="btn invite__button">เชิญ</button>
+        <button class="btn invite__button" id="generateQr">เชิญ</button>
 
-        <div class="invite__qrcode" id="qrcode"></div>
+        <div class="invite__qrcode-link">
+          <div class="invite__qrcode" id="qrcode"></div>
+          <div class="invite__link">
+            <input type="text" class="invite__input" id="link" />
+
+            <div class="group-btn">
+              <button class="btn invite__button" id="downloadQr">บันทึก QR</button>
+              <button class="btn invite__button" id="copyLink">คัดลอก link</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

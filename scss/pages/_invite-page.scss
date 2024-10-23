@@ -108,7 +108,7 @@
         width: rem(492.8);
         height: rem(768);
         margin: 0 auto;
-    
+
         .card-image {
           @include fill-area;
           @include bg-cov("../images/pages/welcome-page/main.png");
@@ -138,26 +138,50 @@
             &:nth-child(3) {
               margin-top: rem(25);
             }
-
-            input {
-              width: rem(375);
-              border: none;
-            }
           }
           &__button {
             margin-top: rem(48);
           }
 
+          &__qrcode-link {
+            @include flex-center;
+            gap: rem(60);
+            margin-top: rem(25);
+          }
+
           &__qrcode {
+            position: relative;
             width: rem(260);
             height: rem(260);
-            margin-top: rem(25);
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0.3;
+              @include fill-area;
+              @include bg-cov("../images/general/qr.png");
+            }
+          }
+
+          &__link {
+            @include flex-column;
+
+            .group-btn {
+              @include flex;
+            }
           }
         }
       }
     }
   }
 
+  input {
+    width: rem(375);
+    height: rem(62);
+    border: none;
+  }
   .pagination {
     opacity: 0;
   }

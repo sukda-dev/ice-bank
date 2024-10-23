@@ -26,7 +26,7 @@ function animation_handle() {
     },
     {
       top: 0,
-      duration: 3,
+      duration: 2.5,
       ease: Power1.linear,
       onComplete: function () {
         eachFadeInByOpacity(elemArray, function () {
@@ -44,8 +44,14 @@ function game_handle() {
   var inviteName1 = params.get("_invite1");
   var inviteName2 = params.get("_invite2");
 
-  var textInvite1 = typeof inviteName1 != "undefined" && inviteName1 != null ? `${inviteName1}` : ``;
-  var textInvite2 = typeof inviteName2 != "undefined" && inviteName2 != null ? `${inviteName2}` : ``;
+  var textInvite1 =
+    typeof inviteName1 != "undefined" && inviteName1 != null
+      ? `${inviteName1}`
+      : ``;
+  var textInvite2 =
+    typeof inviteName2 != "undefined" && inviteName2 != null
+      ? `${inviteName2}`
+      : ``;
 
   // Set name
   $(`${pageId} #invite1`).text(textInvite1);
@@ -53,19 +59,19 @@ function game_handle() {
 
   const tl = gsap
     .timeline({ repeat: -1, yoyo: true })
-    .to("#envelope", {
+    .to(".envlope-wrapper__inner", {
       duration: 0.75,
       x: "+=5",
       rotation: "+=5",
       ease: "power1.inOut",
     })
-    .to("#envelope", {
+    .to(".envlope-wrapper__inner", {
       duration: 0.75,
       x: "-=10",
       rotation: "-=10",
       ease: "power1.inOut",
     })
-    .to("#envelope", {
+    .to(".envlope-wrapper__inner", {
       duration: 0.75,
       x: "+=5",
       rotation: "+=5",
@@ -76,27 +82,29 @@ function game_handle() {
     $(".envlope-wrapper").fadeInByFlex();
     $(".envlope-wrapper").on("click", function () {
       $(this).offClick();
-      $(`${pageId} .ins`).hide();
-      initSound();
-      normalSound();
-      open();
-
+      $(this).find(".envelope-front, .envelope-back").toggleClass("rotation");
       tl.pause();
-      gsap.to("#envelope", {
+      gsap.to(".envlope-wrapper__inner", {
         duration: 0.5,
         x: 0,
         rotation: 0,
         ease: "power1.inOut",
       });
-      activeModule = true;
 
       timeouts.push(
+        setTimeout(() => {
+          initSound();
+          normalSound();
+          open();
+
+          activeModule = true;
+        }, 2000),
         setTimeout(() => {
           $(this).fadeOut(function () {
             animation_handle();
             pageControl();
           });
-        }, 1800)
+        }, 3000)
       );
     });
   } else {

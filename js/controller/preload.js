@@ -14,6 +14,7 @@ function preloadImages(expression) {
         "images/general/mountain.png",
         "images/general/next.png",
         "images/general/prev.png",
+        "images/general/qr.png",
         "images/general/swiper-arrow-next.png",
         "images/general/swiper-arrow-prev.png"
       );
