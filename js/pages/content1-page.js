@@ -1,5 +1,6 @@
 var pageId = "#content1-page";
-direction = "";
+var direction = "";
+var countdownInterval;
 
 $(function () {
   animationHandle();
@@ -7,7 +8,7 @@ $(function () {
 });
 
 function animationHandle() {
-  const countdownInterval = setInterval(updateCountdown, 1000);
+   countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
 
   let elemArray = [
@@ -123,6 +124,9 @@ function updateCountdown() {
   $(".time__hours .timer").text(hours < 10 ? "0" + hours : hours);
   $(".time__minutes .timer").text(minutes < 10 ? "0" + minutes : minutes);
   $(".time__seconds .timer").text(seconds < 10 ? "0" + seconds : seconds);
+
+  console.log("countdownInterval", countdownInterval);
+  
 
   if (timeDifference < 0) {
     clearInterval(countdownInterval);
